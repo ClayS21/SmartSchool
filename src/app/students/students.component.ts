@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class StudentsComponent {
   public title: string = 'Alunos';
+  public selectedStudent!: string;
 
   public students = [
     { id: 1, name: 'Ana', surname: 'Barbosa', phonenumber: '332255' },
@@ -15,5 +16,9 @@ export class StudentsComponent {
     { id: 4, name: 'Thigo', surname: 'Nigro', phonenumber: '332252' },
     { id: 5, name: 'Christina', surname: 'Rocha', phonenumber: '332259' }
   ]
+
+  selectStudent(student: any) {
+    this.selectedStudent = student.name;
+  }
 
 }

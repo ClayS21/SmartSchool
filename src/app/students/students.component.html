@@ -1,18 +1,27 @@
 <app-title [title]="title"></app-title>
 
+<div *ngIf="selectedStudent">
+  aluno selecionado: {{ selectedStudent }}
+</div>
+<div *ngIf="!selectedStudent">
+  Nenhum selecionado
+</div>
+
 <table class="table table-hover">
     <thead>
       <tr>
         <th scope="col">#</th>
         <th scope="col">Nome</th>
         <th scope="col">Sobrenome</th>
+        <th>Telefone</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let student of students">
+      <tr *ngFor="let student of students" style="cursor:pointer" (click)="selectStudent(student)">
         <th scope="row">{{ student.id }}</th>
         <td>{{ student.name }}</td>
         <td>{{ student.surname }}</td>
+        <td>{{ student.phonenumber }}</td>
       </tr>
     </tbody>
   </table>
