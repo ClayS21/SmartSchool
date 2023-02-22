@@ -21,4 +21,8 @@ export class StudentsComponent {
     this.selectedStudent = student.name;
   }
 
+  comeback() {
+    this.selectedStudent = '';
+  }
+
 }
